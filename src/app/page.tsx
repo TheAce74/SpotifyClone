@@ -1,7 +1,12 @@
-export default function Home() {
+import MobileHeader from "@/components/ui/MobileHeader";
+import { PageSearchParams } from "@/lib/types";
+
+type HomeProps = PageSearchParams;
+
+export default function Home({ searchParams }: HomeProps) {
   return (
     <main>
-      <h1>Spotify Clone</h1>
+      <MobileHeader searchParams={searchParams} />
     </main>
   );
 }

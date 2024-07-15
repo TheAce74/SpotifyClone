@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(lato.className, "bg-neutral-900 text-neutral-100")}>
+      <body className={cn(lato.className, "bg-neutral-800 text-neutral-100")}>
         {children}
       </body>
     </html>

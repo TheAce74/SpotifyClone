@@ -18,6 +18,10 @@ const config: Config = {
           900: "#121212",
         },
       },
+      borderRadius: {
+        pill: "100vmax",
+        circle: "50%",
+      },
     },
   },
   plugins: [],

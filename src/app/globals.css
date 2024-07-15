@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .flex-starter {
+        @apply flex items-center justify-between;
+    }
+
+    .hover-effect {
+        @apply transition-all hover:brightness-90 focus-visible:brightness-90 active:brightness-50;
+    }
+}

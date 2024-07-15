@@ -12,3 +12,11 @@ export type Profile = {
 };
 
 export type AppwriteProfile = Models.Document & Profile;
+
+export type PageParams = {
+  params: { slug: string };
+};
+
+export type PageSearchParams = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
