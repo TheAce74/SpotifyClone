@@ -12,19 +12,21 @@ import Spotify from "next-auth/providers/spotify";
 
 const signInAppwrite = async (
   email: string,
-  passwordHash: string,
+  passwordHash?: string,
 ): Promise<Models.DocumentList<AppwriteProfile>> => {
   return await databases.listDocuments<AppwriteProfile>(
     process.env.APPWRITE_DATABASE_ID ?? "",
     process.env.APPWRITE_PROFILES_COLLECTION_ID ?? "",
-    [Query.equal("email", email)],
+    passwordHash
+      ? [Query.equal("passwordHash", passwordHash), Query.equal("email", email)]
+      : [Query.equal("email", email)],
   );
 };
 
 const signUpAppwrite = async (
   profile: Omit<Profile, "createdAt" | "id">,
 ): Promise<AppwriteProfile | null> => {
-  const user = await signInAppwrite(profile.email, profile.passwordHash);
+  const user = await signInAppwrite(profile.email);
   if (user.documents.length > 0) {
     return null;
   } else {
