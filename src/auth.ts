@@ -17,7 +17,7 @@ const signInAppwrite = async (
   return await databases.listDocuments<AppwriteProfile>(
     process.env.APPWRITE_DATABASE_ID ?? "",
     process.env.APPWRITE_PROFILES_COLLECTION_ID ?? "",
-    [Query.equal("passwordHash", passwordHash), Query.equal("email", email)],
+    [Query.equal("email", email)],
   );
 };
 
