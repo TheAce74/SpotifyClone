@@ -1,5 +1,8 @@
+import { render } from "@testing-library/react";
 import clsx, { ClassValue } from "clsx";
+import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import userEvent from "@testing-library/user-event";
 
 export const cn = (...classes: ClassValue[]): string => {
   return twMerge(clsx(classes));
@@ -40,4 +43,8 @@ export const encrypt = (text: string, shift: number): string => {
 
 export const decrypt = (text: string, shift: number): string => {
   return encrypt(text, 26 - shift);
+};
+
+export const eventSetup = (component: ReactNode) => {
+  return { user: userEvent.setup(), ...render(component) };
 };
