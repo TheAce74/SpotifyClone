@@ -1,7 +1,12 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import MobileHeaderMenu from "@/components/ui/MobileHeaderMenu";
-import { eventSetup } from "@/lib/utils";
+import { ReactNode } from "react";
+import userEvent from "@testing-library/user-event";
+
+const eventSetup = (component: ReactNode) => {
+  return { user: userEvent.setup(), ...render(component) };
+};
 
 afterEach(() => {
   cleanup();

@@ -44,7 +44,3 @@ export const encrypt = (text: string, shift: number): string => {
 export const decrypt = (text: string, shift: number): string => {
   return encrypt(text, 26 - shift);
 };
-
-export const eventSetup = (component: ReactNode) => {
-  return { user: userEvent.setup(), ...render(component) };
-};
