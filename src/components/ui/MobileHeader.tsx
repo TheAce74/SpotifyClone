@@ -1,14 +1,16 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import Logo from "@/components/ui/Logo";
 import { FiSearch } from "react-icons/fi";
-import { PageSearchParams } from "@/lib/types";
 import MobileHeaderMenu from "@/components/ui/MobileHeaderMenu";
+import { useSearchParams } from "next/navigation";
 
-type MobileHeaderProps = PageSearchParams;
+export default function MobileHeader() {
+  const searchParams = useSearchParams();
 
-export default function MobileHeader({ searchParams }: MobileHeaderProps) {
   // TODO: this should change depending on the theme color of the current page
-  const headerBg = (searchParams.theme as string) ?? "#121212";
+  const headerBg = (searchParams.get("theme") as string) ?? "#121212";
 
   return (
     <header

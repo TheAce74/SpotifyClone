@@ -11,3 +11,12 @@
         @apply transition-all hover:brightness-90 focus-visible:brightness-90 active:brightness-50;
     }
 }
+
+/* scrollbar stuff */
+::-webkit-scrollbar {
+    @apply aspect-square w-3;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-neutral-200/50 hover:bg-neutral-200;
+}

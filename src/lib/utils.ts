@@ -1,8 +1,5 @@
-import { render } from "@testing-library/react";
 import clsx, { ClassValue } from "clsx";
-import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
-import userEvent from "@testing-library/user-event";
 
 export const cn = (...classes: ClassValue[]): string => {
   return twMerge(clsx(classes));

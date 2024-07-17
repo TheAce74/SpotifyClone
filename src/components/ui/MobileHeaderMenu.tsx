@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -59,7 +57,7 @@ export default function MobileHeaderMenu() {
     <>
       <button
         className="hover-effect text-2xl"
-        aria-controls="primary-navigation"
+        aria-controls="primary-navigation-mobile"
         aria-expanded={openMenu}
         aria-label="open menu"
         onClick={() => setOpenMenu(true)}
@@ -67,7 +65,7 @@ export default function MobileHeaderMenu() {
         <AiOutlineMenu />
       </button>
       <nav
-        id="primary-navigation"
+        id="primary-navigation-mobile"
         className={cn(
           "fixed inset-0 z-20 bg-neutral-900 px-8 py-6 font-bold transition-all duration-500",
           {
