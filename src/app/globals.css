@@ -14,7 +14,7 @@
 
 /* scrollbar stuff */
 ::-webkit-scrollbar {
-    @apply aspect-square w-3;
+    @apply aspect-square w-1 md:hidden;
 }
 
 ::-webkit-scrollbar-thumb {

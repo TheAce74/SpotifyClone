@@ -7,6 +7,7 @@ import SidebarSection from "@/components/layout/SidebarSection";
 import Link from "next/link";
 import { GoGlobe, GoHome, GoHomeFill, GoPlus } from "react-icons/go";
 import { PiMagnifyingGlass, PiMagnifyingGlassFill } from "react-icons/pi";
+import WithScrollbar from "@/components/layout/WithScrollbar";
 
 const primaryNav = [
   {
@@ -75,7 +76,7 @@ export default function Sidebar() {
             <GoPlus />
           </button>
         </header>
-        <div className="h-[45%] overflow-y-auto">
+        <WithScrollbar className="h-[45%]">
           <SidebarCard
             title="Create your first playlist"
             text="It's easy, we'll help you"
@@ -84,24 +85,24 @@ export default function Sidebar() {
           />
           <SidebarCard
             title="Let's find some podcasts to follow"
-            text="we'll keep you updated on new episodes"
+            text="We'll keep you updated on new episodes"
             btn="Browse podcasts"
             handler="podcast"
           />
-        </div>
+        </WithScrollbar>
         <footer className="py-8">
           <div className="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
             {footerLinks.map((link) => (
               <Link
                 key={link.text}
                 href={link.path}
-                className="hover-effect text-neutral-200"
+                className="hover-effect font-bold text-neutral-200"
               >
                 {link.text}
               </Link>
             ))}
           </div>
-          <Button variant="inverted" className="!gap-1 !px-4 !text-sm">
+          <Button variant="inverted">
             <GoGlobe />
             <p>English</p>
           </Button>

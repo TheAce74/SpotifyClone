@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import MobileHeader from "@/components/ui/MobileHeader";
 import Sidebar from "@/components/ui/Sidebar";
 import SignupBanner from "@/components/ui/SignupBanner";
+import DesktopHeader from "@/components/ui/DesktopHeader";
+import WithScrollbar from "@/components/layout/WithScrollbar";
 
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
@@ -22,7 +24,10 @@ export default function RootLayout({
           <MobileHeader />
           <div className="px-4 py-2 md:grid md:h-[calc(100dvh_-_5rem)] md:grid-cols-[350px_1fr] md:gap-4 md:px-3 md:py-3">
             <Sidebar />
-            {children}
+            <WithScrollbar className="h-full">
+              <DesktopHeader />
+              {children}
+            </WithScrollbar>
           </div>
           <SignupBanner />
         </div>
