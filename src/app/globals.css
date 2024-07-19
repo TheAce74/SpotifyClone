@@ -14,9 +14,18 @@
 
 /* scrollbar stuff */
 ::-webkit-scrollbar {
-    @apply aspect-square w-1 md:hidden;
+    @apply w-1 md:hidden;
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-neutral-200/50 hover:bg-neutral-200;
+    @apply bg-neutral-200/50 hover:bg-neutral-200/80;
+}
+
+.os-scrollbar {
+    @apply !w-4;
+}
+
+.os-scrollbar-horizontal .os-scrollbar-handle,
+.os-scrollbar-vertical .os-scrollbar-handle {
+    @apply bg-neutral-200/50 hover:bg-neutral-200/80 rounded-none;
 }

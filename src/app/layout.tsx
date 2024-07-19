@@ -6,6 +6,7 @@ import Sidebar from "@/components/ui/Sidebar";
 import SignupBanner from "@/components/ui/SignupBanner";
 import DesktopHeader from "@/components/ui/DesktopHeader";
 import WithScrollbar from "@/components/layout/WithScrollbar";
+import "overlayscrollbars/overlayscrollbars.css";
 
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
