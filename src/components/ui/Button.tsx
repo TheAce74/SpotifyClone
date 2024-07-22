@@ -1,9 +1,10 @@
+import { ButtonVariants } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "play" | "inverted";
+  variant?: ButtonVariants;
 };
 
 export default function Button({
@@ -32,6 +33,8 @@ const buttonVariants = cva(
         primary: "rounded-pill bg-neutral-100 py-[0.4rem] text-neutral-900",
         play: "aspect-square w-12 rounded-circle border-primary bg-primary p-0 text-neutral-900",
         inverted: "rounded-pill py-[0.4rem]",
+        invisible:
+          "rounded-pill border-transparent py-[0.4rem] text-neutral-200 hover:text-neutral-100 focus-visible:text-neutral-100",
       },
     },
     defaultVariants: {

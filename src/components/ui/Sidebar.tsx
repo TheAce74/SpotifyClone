@@ -53,7 +53,7 @@ const footerLinks = [
 
 export default function Sidebar() {
   return (
-    <aside className="sticky top-0 z-10 hidden md:flex md:h-[calc(100dvh_-_6.5rem)] md:flex-col">
+    <aside className="sticky top-0 z-10 hidden md:flex md:h-[calc(100dvh_-_6.9rem)] md:flex-col">
       <SidebarSection id="navigation">
         <Logo iconClass="w-6" textClass="text-base" />
         <nav>

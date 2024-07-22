@@ -15,7 +15,7 @@ export default function SignupBanner() {
           continue: pathname,
         },
       }}
-      className="md:flex-starter z-10 mx-3 hidden rounded-lg bg-gradient-to-r from-[#af2896] to-[#509bf5] px-6 py-3"
+      className="md:flex-starter z-10 mx-3 hidden gap-4 rounded-lg bg-gradient-to-r from-[#af2896] to-[#509bf5] px-6 py-3"
     >
       <div className="font-semibold">
         <h3 className="text-sm">Preview of Spotify</h3>
@@ -24,7 +24,7 @@ export default function SignupBanner() {
           credit card needed.
         </p>
       </div>
-      <Button>Sign up free</Button>
+      <Button className="px-8 py-3 text-base font-bold">Sign up free</Button>
     </Link>
   );
 }

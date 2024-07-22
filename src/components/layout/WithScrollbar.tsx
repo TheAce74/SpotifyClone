@@ -6,11 +6,13 @@ import { useOverlayScrollbars } from "overlayscrollbars-react";
 
 type WithScrollbarProps = PropsWithChildren & {
   className?: string;
+  id?: string;
 };
 
 export default function WithScrollbar({
   children,
   className,
+  id,
 }: WithScrollbarProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [initialize] = useOverlayScrollbars({
@@ -29,7 +31,11 @@ export default function WithScrollbar({
   }, [initialize]);
 
   return (
-    <div ref={containerRef} className={cn("h-1/2 overflow-y-auto", className)}>
+    <div
+      ref={containerRef}
+      className={cn("h-1/2 overflow-y-auto", className)}
+      id={id}
+    >
       {children}
     </div>
   );

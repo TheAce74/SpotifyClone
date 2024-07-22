@@ -20,3 +20,5 @@ export type PageParams = {
 export type PageSearchParams = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
+
+export type ButtonVariants = "primary" | "play" | "inverted" | "invisible";
